@@ -31,13 +31,15 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           ),
+          SizedBox(height: 30.0),
           Container(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                MyIcons(Icons.home, size: 32.0, color: Colors.yellow,),
-                MyIcons(Icons.search, size: 32.0, color: Colors.yellow,),
-                MyIcons(Icons.games, size: 32.0, color: Colors.yellow,),
-                MyIcons(Icons.nature, size: 32.0, color: Colors.yellow,),
+                CustomIcon(Icons.home, size: 32.0, color: Colors.yellow,),
+                CustomIcon(Icons.search, size: 32.0, color: Colors.blue,),
+                CustomIcon(Icons.games, size: 32.0, color: Colors.pink,),
+                CustomIcon(Icons.search, size: 32.0, color: Colors.purple,),
               ],
             ),
           )
@@ -47,22 +49,22 @@ class _HomePageState extends State<HomePage> {
   }
 }
 Widget _swiperBuilder(BuildContext context, int index) {
-  print(index);
+  // print(index);
   return (Image.network(
     swiper_data[index],
     fit: BoxFit.fill,
   ));
 }
-class  MyIcons extends StatelessWidget {
+class CustomIcon extends StatelessWidget {
   IconData icons;
   double size=32.0;
   Color color;
-  MyIcons(this.icons,{this.size, this.color});
+  CustomIcon(this.icons,{this.size, this.color});
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100.0,
-      height: 100.0,
+      width: 60.0,
+      height: 60.0,
       color: this.color,
       child: Center(
         child: Icon(
